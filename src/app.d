@@ -35,7 +35,8 @@ __gshared
 int main()
 {
     scope(exit) setMode(FanMode.automatic);
-    signal(SIGINT, &handleSigint);
+    signal(SIGINT, &handleSignal);
+    signal(SIGTERM, &handleSignal);
     setMode(FanMode.manual);
     while(true)
     {
@@ -107,7 +108,7 @@ int getCurrentTemperature()
     return result[0..charsRead].stripRight.to!int;
 }
 
-extern(C) void handleSigint(int sig) nothrow @nogc
+extern(C) void handleSignal(int sig) nothrow @nogc
 {
     if (manualModeWasSet)
     {
