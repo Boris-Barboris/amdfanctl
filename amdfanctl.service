@@ -1,0 +1,9 @@
+[Unit]
+Description=AMDGPU custom fan controller
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/amdfanctl
+
+[Install]
+WantedBy=multi-user.target
