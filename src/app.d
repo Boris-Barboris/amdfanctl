@@ -37,7 +37,6 @@ int main()
     scope(exit) setMode(FanMode.automatic);
     signal(SIGINT, &handleSignal);
     signal(SIGTERM, &handleSignal);
-    setMode(FanMode.manual);
     while(true)
     {
         int currentTemp = getCurrentTemperature();
@@ -46,6 +45,7 @@ int main()
         if (desiredPower <= fanStopPower)
             desiredPower = 0;
         writeln("temp = ", currentTemp, ", desiredPower = ", desiredPower);
+        setMode(FanMode.manual);
         setFanPower(desiredPower);
         Thread.sleep(seconds(2));
     }
