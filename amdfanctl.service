@@ -4,6 +4,7 @@ Description=AMDGPU custom fan controller
 [Service]
 Type=simple
 ExecStart=/usr/bin/amdfanctl
+#StandardOutput=null
 
 [Install]
 WantedBy=multi-user.target
