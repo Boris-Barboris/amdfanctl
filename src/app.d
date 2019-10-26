@@ -23,7 +23,7 @@ __gshared
     string powerFileName = "/sys/class/drm/card0/device/hwmon/hwmon2/pwm1\0";
     string temperatureFileName = "/sys/class/drm/card0/device/hwmon/hwmon2/temp1_input\0";
     int stopFanTemp = 55000;
-    int fullFanTemp = 88000;
+    int fullFanTemp = 95000;
     ubyte fanStopPower = 83;
     ubyte fanStartPower = 90;
     int period = 4;
