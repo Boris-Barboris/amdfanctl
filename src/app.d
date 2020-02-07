@@ -26,7 +26,7 @@ __gshared
     int fullFanTemp = 95000;
     ubyte fanStopPower = 83;
     ubyte fanStartPower = 90;
-    int period = 4;
+    int period = 3;
 
     bool manualModeWasSet;
 }
@@ -45,6 +45,7 @@ int main()
         // hysteresis
         if (desiredPower <= fanStopPower || (prevDesiredPower <= fanStopPower && desiredPower <= fanStartPower))
             desiredPower = 0;
+        desiredPower = max(fanStartPower, desiredPower);
         prevDesiredPower = desiredPower;
         writeln("temp = ", currentTemp, ", desiredPower = ", desiredPower);
         setMode(FanMode.manual);
