@@ -19,9 +19,9 @@ enum FanMode: int
 
 __gshared
 {
-    string fanmodeFileName = "/sys/class/drm/card0/device/hwmon/hwmon1/pwm1_enable\0";
-    string powerFileName = "/sys/class/drm/card0/device/hwmon/hwmon1/pwm1\0";
-    string temperatureFileName = "/sys/class/drm/card0/device/hwmon/hwmon1/temp1_input\0";
+    string fanmodeFileName = "/sys/class/drm/card0/device/hwmon/hwmon0/pwm1_enable\0";
+    string powerFileName = "/sys/class/drm/card0/device/hwmon/hwmon0/pwm1\0";
+    string temperatureFileName = "/sys/class/drm/card0/device/hwmon/hwmon0/temp1_input\0";
     int stopFanTemp = 55000;
     int fullFanTemp = 100000;
     ubyte fanStopPower = 83;
